@@ -7,7 +7,7 @@ export default async function Home({searchParams}: any) {
     manufacturer: searchParams.manufacturer || '',
     model: searchParams.model || '',
     year: searchParams.year || 2022,
-    limit: searchParams.limit || 12,
+    limit: searchParams.limit || 10,
     fuel: searchParams.fuel || '',
   });
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
@@ -36,7 +36,7 @@ export default async function Home({searchParams}: any) {
                 <CarCard car={car}/>
               ))}
             </div>
-            <ShowMore pageNumber={(searchParams.limit || 12)/12} isNext={(searchParams.limit || 12)>allCars.length}/>
+            <ShowMore pageNumber={(searchParams.limit || 10)/10} isNext={(searchParams.limit || 10)>allCars.length}/>
           </section>
         ) : 
         (
